@@ -150,7 +150,7 @@ on the side of the board facing up but you need to solder them on the back side
 of the board.  I bend the legs to form a `V` shape to keep the diodes in place
 when you flip the board over:
 
-![diode back side](images/diode-backside.jpg)
+![diode back side](images/diodes-backside.jpg)
 
 Once you've placed the diodes, check again to make sure that you have them
 facing the right direction (*black, thick, square*) and solder them in.  You
@@ -178,3 +178,61 @@ they can jab in a few millimeters and draw blood.
 
 ![diode leg snip](images/diode-snip.jpg)
 
+## TRRS Connectors
+
+Attaching these is pretty straightforward; look for the little notch in the PCB
+near the I2C jumpers.  The notch makes room for the circular opening in the
+connector.  Place the legs of the component through the holes and solder on the
+other side.
+
+If you are using a plate with your keyboard, check to see whether you have enough
+clearance to mount the connector on the switch side of the plate.  If you
+have an acrylic plate than I suspect that there won't be enough clearance.
+If you're using a 1.6mm plate then it looks like it might just fit.
+
+In the pictures in this guide, I built without a plate and placed the connectors
+on the top side of the PCB.
+
+## Header Strip for Controller and Expander
+
+I recommend using some header strip to mount these components.  The controller
+comes with appropriately sized strip but you'll need to obtain some more header
+to mount the IO expander.
+
+Similar consideration as the TRRS connector: make sure that you have enough
+clearance to place the components and your plate if you're using a plate.  You
+may need to mount the components on the opposite side of the board to
+accomodate your plate.   Note that you can also [buy short header
+strip](https://www.adafruit.com/product/3002) for lower profile builds.
+
+This image shows the header strip placement for the IO Expander:
+![LHS I2C jumper](images/jumper-header-lhs.jpg)
+
+## Key Switches
+
+These should also be pretty simple to place, especially if you ordered PCB
+mounted switches.  The PCB mounted switches have a couple of extra legs to
+ensure that the switch is correctly aligned in the PCB.  If you have plate
+mounted switches, those lugs are not present because the plate is supposed to
+orient and align the switches.
+
+If you're using plate mounted switches on the PCB and are not using a plate
+you will need to take extra care to ensure that the switches mount square
+and consistently, otherwise your keycaps will be misaligned.
+
+Press the key switches into the mounting holes; make sure that the metal legs
+of the switch poke through the other side.  If you don't see a leg poking
+through it means that the leg is most likely folded flat; remove the switch and
+straighten the leg and try again.
+
+Make sure that the switches are pushed in snugly and that the switches are
+flush with the PCB, otherwise your keycaps will be misaligned.  You may hear or
+feel a click when the switch is well placed.  
+
+I tend to place all of the switches at once, then flip the board over and
+solder them in.  Before you solder, make sure that none of the switches shifted
+during the flip.  In my test build the tolerance on the hole was good and the
+switches were held in just fine, but depending on your switches you may find
+that one or two of them are a little loose and need to be re-seated.
+
+![switches placed](images/switches-placed.jpg)
