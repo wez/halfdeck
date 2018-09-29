@@ -16,6 +16,11 @@ a 4-wire cable that carries the power and I2C signals to the IO expander.
 ![left hand](images/left-hand-populated.jpg)
 ![right hand](images/right-hand-populated.jpg)
 
+## Firmware
+
+You can find example firmware for an atmega32u4 based Feather board here:
+https://github.com/wez/qmk_firmware/tree/flutterby-rebased/keyboards/halfdeck
+
 ## Before you begin
 
 The PCBs are double sided so that the same design can be used to build either
@@ -211,6 +216,12 @@ strip](https://www.adafruit.com/product/3002) for lower profile builds.
 
 This image shows the header strip placement for the IO Expander:
 ![LHS I2C jumper](images/jumper-header-lhs.jpg)
+
+When soldering the header be prepared: `GND` is attached to a larger ground
+plane fill in that area of the board; there's large region of copper under the
+surface coating and that means that it will soak up the heat from your iron and
+be more difficult/take longer to solder than the surrounding pins. You may
+notice that the PCB in that region is noticeably much hotter.  This is fine.
 
 ## Key Switches
 
