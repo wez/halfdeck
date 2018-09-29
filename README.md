@@ -13,6 +13,9 @@ matrix and that can be queried over I2C.
 A TRRS (Tip-Ring-Ring-Sleeve) cable is used to connect the two halves; this is
 a 4-wire cable that carries the power and I2C signals to the IO expander.
 
+![left hand](images/left-hand-populated.jpg)
+![right hand](images/right-hand-populated.jpg)
+
 ## Before you begin
 
 The PCBs are double sided so that the same design can be used to build either
@@ -61,7 +64,8 @@ connected to the power and ground lines.
 Each jumper consists of three rectangles.  The middle of the three needs to
 be bridged to *either* the left or the right pad using either excess solder
 or a short section snipped off of one of the diode legs.  Controlling excess
-solder can be difficult, so I would suggest using a diode leg trimmed to size.
+solder can be difficult, so I would suggest using a diode leg trimmed to size
+if you're not confident, or you don't have a solder sucker on hand to undo.
 
 * `JP1` must be bridged to `3V3`
 * `JP2` must be bridged to `GND`
