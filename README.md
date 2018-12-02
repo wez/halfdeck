@@ -131,6 +131,7 @@ the misnamed `SDL` pads to the `SCL` pads on each side.
 3. Jumpers (I2C and the Errata section above)
 4. Header strip for the controller/expander
 5. Key switches
+6. Touchpad
 
 ## Diodes
 
@@ -242,7 +243,7 @@ straighten the leg and try again.
 
 Make sure that the switches are pushed in snugly and that the switches are
 flush with the PCB, otherwise your keycaps will be misaligned.  You may hear or
-feel a click when the switch is well placed.  
+feel a click when the switch is well placed.
 
 I tend to place all of the switches at once, then flip the board over and
 solder them in.  Before you solder, make sure that none of the switches shifted
@@ -251,3 +252,55 @@ switches were held in just fine, but depending on your switches you may find
 that one or two of them are a little loose and need to be re-seated.
 
 ![switches placed](images/switches-placed.jpg)
+
+## Touchpad
+
+I tried two different touchpad models.  The one I'm most happy with is the
+Azoteq TPS43-201A-S, which is a 43mm approximately-square touchpad which
+connects to the I2C bus on this keyboard.  When I designed the board I
+though I was going to use a different touchpad that was connected via SPI,
+so the mounting area on the board breaks out the SPI pins but not the I2C
+pins.  That means that connecting the touchpad requires a couple of bridging
+wires to connect across the backside of the pcb.
+
+Prepare those wires; you'll need 3 that are long and two that are relatively
+short.  You'll want to give yourself a little slack but not so much that
+the wires crowd out the underside of your board.
+
+Here's a picture of the wiring on the reverse of the PCB so that you can
+visualize this a little better; the slack allows popping off the case in
+the event that you need to get inside the board and clean it.
+
+![pcb touchpad wiring](images/azoteq-pcb-wiring.jpg)
+
+The touchpad itself provides solderable pads that are just perfect for
+our needs:
+
+![touchpad reverse](images/azoteq-wiring-reverse.jpg)
+
+| Touchpad | PCB |
+| -------- | --- |
+| SDA      | SDA - on the header block at the top of the board |
+| SCL      | SCL - on the first rev of the PCB this is mislabeled as SDL on the header block at the top of the board |
+| 3V3      | 3V3 - in the header block in the circle at the bottom of the board |
+| GND      | GND - in the header block in the circle at the bottom of the board |
+| RST      | Not connected |
+| RDY      | ~INT - the interrupt pin behind the microcontroller |
+
+## Orientation of the touchpad
+
+The top edge of the touchpad has a small notch.  When the touchpad is placed
+on the board, the solder pads for the connections listed in the table above
+will be in the bottom right of the touchpad if you look down from the top
+surface of the touch pad.
+
+While you're soldering you'll have it facing up the other way and so those pads
+will be in the bottom left of the underside of the touchpad.
+
+## Mounting the touchpad
+
+I've only made this work when integrating with the 3D printed flavor of the case.
+You'll need the [touchpad_stand](case/touchpad_stand.stl) to raise the pad up to
+the level of the case.  There is an open side in the touchpad stand that is intended
+to allow your wiring to pass through; the idea is that you don't want to solder your
+wires into the stand as you won't be able to remove it without de-soldering.
