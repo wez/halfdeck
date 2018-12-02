@@ -33,12 +33,12 @@ union(){
             translate([-22,-1,height-1.4]) {
                 cube(2);
             }
-            
+
             // subtract the inside: left mounting rect
             translate([-21,-7,0]) {
                 cube([3,13.5,1.6]);
             }
-            
+
             // subtract the inside: right mounting rect
             translate([18,-7,0]) {
                 cube([3,13.5,1.6]);
