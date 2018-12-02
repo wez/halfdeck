@@ -263,7 +263,19 @@ so the mounting area on the board breaks out the SPI pins but not the I2C
 pins.  That means that connecting the touchpad requires a couple of bridging
 wires to connect across the backside of the pcb.
 
-Prepare those wires; you'll need 3 that are long and two that are relatively
+The touchpad is shipped with a removable 3M adhesive pad on the touch surface;
+**keep this attached to the touchpad** (well, you can peel back a corner and
+take a peek at the sensor grid if you like).  The purpose of this is to ensure
+that you have no air gap between the capacitive touch grid on the touchpad
+surface and the touch surface.  The 3M label makes a reasonable touch surface,
+but you may want to consider placing your own more permanent and aestheticly
+pleasing surface in its place.  The datasheet recommends a surface that is no
+more than 3mm thick, and it should be something that doesn't interfere with the
+capacitive field.
+
+### Touchpad Wiring
+
+Prepare your bridging wires; you'll need 3 that are long and two that are relatively
 short.  You'll want to give yourself a little slack but not so much that
 the wires crowd out the underside of your board.
 
@@ -278,6 +290,8 @@ our needs:
 
 ![touchpad reverse](images/azoteq-wiring-reverse.jpg)
 
+The pads are connected to the PCB via the briding wires:
+
 | Touchpad | PCB |
 | -------- | --- |
 | SDA      | SDA - on the header block at the top of the board |
@@ -287,7 +301,7 @@ our needs:
 | RST      | Not connected |
 | RDY      | ~INT - the interrupt pin behind the microcontroller |
 
-## Orientation of the touchpad
+### Orientation of the touchpad
 
 The top edge of the touchpad has a small notch.  When the touchpad is placed
 on the board, the solder pads for the connections listed in the table above
@@ -297,10 +311,55 @@ surface of the touch pad.
 While you're soldering you'll have it facing up the other way and so those pads
 will be in the bottom left of the underside of the touchpad.
 
-## Mounting the touchpad
+### Mounting the touchpad
 
 I've only made this work when integrating with the 3D printed flavor of the case.
 You'll need the [touchpad_stand](case/touchpad_stand.stl) to raise the pad up to
 the level of the case.  There is an open side in the touchpad stand that is intended
 to allow your wiring to pass through; the idea is that you don't want to solder your
 wires into the stand as you won't be able to remove it without de-soldering.
+
+## Case
+
+In the [case](case) directory you'll find a number of files to use for the case.  You
+have a couple of options:
+
+### 2D laser cut sandwich style case
+
+This is the simplest case design, but because it is 2D doesn't have a story for (literally)
+supporting the touchpad.  There are no sides to the case and the idea is that
+you assemble it using some M3 standoffs/spacers and nuts and bolts.  There are a number
+of SVG files in the repo that can be used to assemble a case.  For example, you can
+take [this one](case/half-deck-case-bottom-and-switch-plate-no-touch-pad-ponoko-p2.svg)
+to [Ponoko](https://www.ponoko.com/) and select you preferred color of acrylic P2 material.
+
+### 3D printed case (work in progress)
+
+This one is your best option when using a touchpad.  There are a couple of parts to print in
+the current iteration.  These are for a right handed build including a touchpad.  You can
+mirror the parts if you want a left handed build with a touchpad, or just mirror the left
+half if you want a right half with no touchpad:
+
+ * [left half](case/left-case.stl)
+ * [right_half](case/right-case.stl)
+ * [touchpad_stand](case/touchpad_stand.stl)
+ * Currently missing: bottom cover.  It's not strictly needed as the case has a lip
+   with sufficient clearance, but you can extrude [case-bottom.svg](case/case-bottom.svg)
+   and print that or just laser cut it from some other material if you really need
+   something.
+
+You'll need some M3 bolts to attach the PCB to the case and something like these
+[heat-set embedment nuts](https://www.amazon.com/gp/product/B01IYWTCWW)
+to provide threads that you can screw the bolts into.  Check out 
+[this page](https://www.3dhubs.com/knowledge-base/how-assemble-3d-printed-parts-threaded-fasteners)
+for more information.
+
+If you don't have a 3D printer you can upload these files to somewhere like
+[3D Hubs](https://www.3dhubs.com/) and have them printed for you at a cost of
+around $50 for one set, plus shipping.
+
+If you do have a 3D printer but it isn't large enough to print these models, you'll
+find a set of `sliced_case` files in this repo that are divided into quarters that
+are printable in a printer with a 140 cubic mm volume.  These are cut in such a way
+that the pieces lock together when mounted on the PCB.
+
