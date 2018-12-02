@@ -13,6 +13,7 @@ matrix and that can be queried over I2C.
 A TRRS (Tip-Ring-Ring-Sleeve) cable is used to connect the two halves; this is
 a 4-wire cable that carries the power and I2C signals to the IO expander.
 
+![naked mcu right hand](images/case-with-naked-mcu.jpg)
 ![left hand](images/left-hand-populated.jpg)
 ![right hand](images/right-hand-populated.jpg)
 
@@ -334,6 +335,12 @@ take [this one](case/half-deck-case-bottom-and-switch-plate-no-touch-pad-ponoko-
 to [Ponoko](https://www.ponoko.com/) and select you preferred color of acrylic P2 material.
 
 ### 3D printed case (work in progress)
+
+![naked mcu right hand](images/case-with-naked-mcu.jpg)
+
+> Pictured above: a debug version of the case with partially exposed controller.
+> The case files below are fully enclosed but I don't have a real print of that
+> to show at this time.
 
 This one is your best option when using a touchpad.  There are a couple of parts to print in
 the current iteration.  These are for a right handed build including a touchpad.  You can
