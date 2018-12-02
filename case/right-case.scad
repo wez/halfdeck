@@ -174,7 +174,6 @@ module quarter(x, y, z, y_cut_delta=0, x_cut_delta=0, offset=[0,0,0], piece) {
 module case_top() {
 difference() {
 difference() {
-difference() {
 union() {
 difference() {
 difference() {
@@ -3456,7 +3455,6 @@ polygon([
 }
 difference() {
 difference() {
-difference() {
 linear_extrude(height=17.5) {
 polygon([
   [119.9620436791635, -12.0],
@@ -3957,27 +3955,6 @@ polygon([
 
 }
 }
-}
-}
-}
-color("pink") {
-linear_extrude(height=23.4) {
-polygon([
-  [160.0, -27.0],
-  [160.0, 42.0],
-  [137.0, 42.0],
-  [137.0, -27.0],
-  [160.0, -27.0]
-  ], [
-  [
-  0,
-  1,
-  2,
-  3,
-  4
-  ]
-  ]);
-
 }
 }
 }
@@ -7491,27 +7468,6 @@ polygon([
   ]);
 
 }
-}
-}
-}
-color("pink") {
-linear_extrude(height=23.4) {
-polygon([
-  [160.0, -27.0],
-  [160.0, 42.0],
-  [137.0, 42.0],
-  [137.0, -27.0],
-  [160.0, -27.0]
-  ], [
-  [
-  0,
-  1,
-  2,
-  3,
-  4
-  ]
-  ]);
-
 }
 }
 }
